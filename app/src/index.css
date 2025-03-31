@@ -2,3 +2,15 @@
     display: grid;
     grid-template-columns:repeat(3);
 }
+
+.grid-col{
+    display: flex;
+}
+
+.margin-col{
+    margin-block: 5px;
+}
+
+.margin-cell{
+    margin-inline: 5px;
+}
