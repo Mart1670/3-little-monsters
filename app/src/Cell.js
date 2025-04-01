@@ -15,7 +15,7 @@ export default function Cell(props) {
     };
 
     return (
-        <button className="fill-yellow size-cell d-flex" onClick={handleClick}>
+        <div className="cursor fill-yellow size-cell" onClick={handleClick}>
             {monster}
-        </button>);
+        </div>);
 }
