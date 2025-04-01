@@ -29,8 +29,8 @@ export default function Grid(props){
             <div className = "grid-col margin-col" key={row}>
                 <div className = "grid-col">
                     {cols.map((col) => (
-                        <div className="margin-cell border-cell size-cell" key={col + row}>
-                            {row}-{col}
+                        <div className="margin-cell size-cell fill-yellow d-flex" key={col + row}>
+                            <Cell rowIndex={row} colIndex={col}/>
                         </div>
                     ))}
                 </div>
