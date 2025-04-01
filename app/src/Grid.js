@@ -24,16 +24,14 @@ export default function Grid(props){
     const numbers = [1,2,3,4,5,6,7,8,9]; // Rows
     const alphas = ["A", "B", "C", "D", "E", "F", "G", "H", "I"]; // Cols
 
-    return (<div className = "grid">
+    return (<div className = "">
         {rows.map((row) => (
-            <div className = "grid-col margin-col" key={row}>
-                <div className = "grid-col">
-                    {cols.map((col) => (
-                        <div className="margin-cell size-cell fill-yellow d-flex" key={col + row}>
-                            <Cell rowIndex={row} colIndex={col}/>
-                        </div>
-                    ))}
-                </div>
+            <div className = "margin-col grid-col" key={row}>
+                {cols.map((col) => (
+                    <div className="margin-cell size-cell fill-yellow d-flex" key={col + row}>
+                        <Cell rowIndex={row} colIndex={col}/>
+                    </div>
+                ))}
             </div>
         ))}
     </div>

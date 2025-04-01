@@ -1,5 +1,5 @@
 import React, {useState} from "react"
-import Monster from "./Monster.js"
+import Monster from "./Monster"
 
 export default function Cell(props) {
 
@@ -8,8 +8,14 @@ export default function Cell(props) {
         colIndex: props.colIndex
     }
 
+    const [monster, setMonster] = useState();
+
+    function handleClick(){
+        setMonster(<Monster />)
+    };
+
     return (
-        <div>
-            <Monster />
+        <div className="cursor fill-yellow size-cell" onClick={handleClick}>
+            {monster}
         </div>);
 }
