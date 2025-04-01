@@ -8,9 +8,19 @@
 }
 
 .margin-col{
-    margin-block: 5px;
+    /* margin-block: 5px; */
 }
 
 .margin-cell{
-    margin-inline: 5px;
+    margin: 5px;
+}
+
+.size-cell{
+    height: 50px;
+    width: 50px;
+    text-align: center;
+}
+
+.border-cell{
+    border: solid 1px;
 }

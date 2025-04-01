@@ -3,6 +3,6 @@ import Grid from "./Grid"
 
 export default function Game(){
     return <>
-    <div><Grid size={8}/></div>
+    <div><Grid colSize={8} rowSize={8}/></div>
     </>;
 }
