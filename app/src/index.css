@@ -1,0 +1,33 @@
+.grid-row{
+    display: grid;
+    grid-template-columns:repeat(3);
+}
+
+.grid-col{
+    display: flex;
+}
+
+.margin-col{
+    /* margin-block: 5px; */
+}
+
+.margin-cell{
+    margin: 5px;
+}
+
+.size-cell{
+    height: 50px;
+    width: 50px;
+    text-align: center;
+    border-radius: 10px;
+}
+
+.d-flex{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.fill-yellow{
+    background-color: #ffd735;
+}
