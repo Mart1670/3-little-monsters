@@ -1,6 +1,11 @@
-.grid-row{
-    display: grid;
-    grid-template-columns:repeat(3);
+body, button{
+    font-family: "Boldonse", system-ui;
+    font-weight: 400;
+    font-style: normal;
+}
+
+button{
+    /* font-size: 7px; */
 }
 
 .grid-col{
@@ -20,6 +25,7 @@
     width: 50px;
     text-align: center;
     border-radius: 10px;
+    max-width: 100%;
 }
 
 .d-flex{
@@ -30,4 +36,9 @@
 
 .fill-yellow{
     background-color: #ffd735;
+    border: none;
+}
+
+.level-1{
+    background-color: #35aeff;
 }
