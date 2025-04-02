@@ -11,7 +11,7 @@ export default function Grid(props){
 
     const [indexClick, setIndexClick] = useContext(IndexContext);
 
-    console.log(indexClick);
+    // console.log(indexClick);
     let rows = [];
     for(let i = 1; i < gridSize.rowSize + 1; i++){
         rows.push(i);

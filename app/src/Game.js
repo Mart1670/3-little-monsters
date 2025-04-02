@@ -10,7 +10,7 @@ export default function Game(){
     return (
         <div>
             <IndexContext.Provider value={[indexClick, setIndexClick]}>
-                <Grid colSize={20} rowSize={8}/>
+                <Grid colSize={8} rowSize={8}/>
             </IndexContext.Provider>
             <p>You clicked on: {indexClick}</p>
         </div>
