@@ -1,5 +1,6 @@
-import React, {useState} from "react"
+import React, {useState, useContext} from "react"
 import Cell from "./Cell"
+import { IndexContext } from "./Game";
 
 export default function Grid(props){
 
@@ -8,27 +9,24 @@ export default function Grid(props){
         colSize: props.colSize
     };
 
-    console.log(props);
+    const [indexClick, setIndexClick] = useContext(IndexContext);
+
+    console.log(indexClick);
     let rows = [];
     for(let i = 1; i < gridSize.rowSize + 1; i++){
         rows.push(i);
     };
-    console.log(rows);
 
     let cols = [];
     for(let y = 1; y < gridSize.colSize + 1; y++){
         cols.push(y);
     };
-    console.log(cols);
-
-    const numbers = [1,2,3,4,5,6,7,8,9]; // Rows
-    const alphas = ["A", "B", "C", "D", "E", "F", "G", "H", "I"]; // Cols
 
     return (<div className = "">
         {rows.map((row) => (
             <div className = "margin-col grid-col" key={row}>
                 {cols.map((col) => (
-                    <div className="margin-cell size-cell fill-yellow d-flex" key={col + row}>
+                    <div className="margin-cell size-cell fill-yellow d-flex" key={col + row} onClick = {() => setIndexClick(col.toString()+"-"+row.toString())}>
                         <Cell rowIndex={row} colIndex={col}/>
                     </div>
                 ))}

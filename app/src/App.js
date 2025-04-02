@@ -1,6 +1,7 @@
 import React from "react";
 import Game from "./Game";
-import "./index.css"
+import "./index.css";
+import { useContext } from "react";
 
 const App = () => {
   return <>

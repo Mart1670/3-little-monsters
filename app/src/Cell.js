@@ -9,9 +9,10 @@ export default function Cell(props) {
     }
 
     const [monster, setMonster] = useState();
+    
 
     function handleClick(){
-        setMonster(<Monster />)
+        setMonster(<Monster />);
     };
 
     return (
