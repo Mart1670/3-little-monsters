@@ -1,8 +1,6 @@
-import React, {useState, useContext, createContext, useEffect} from "react"
+import React, {useState, useContext, useEffect} from "react"
 import Cell from "./Cell"
-import { IndexContext } from "./Game";
-
-export const GridContext = createContext([]);
+import { IndexContext, GridContext } from "./Game";
 
 export default function Grid(props){
 
@@ -12,7 +10,9 @@ export default function Grid(props){
     };
 
     const [indexClicked, setIndexClicked] = useContext(IndexContext);
-    const [gridContent, setGridContent] = useState(GridContext);
+    const [gridContent, setGridContent] = useContext(GridContext);
+    // console.log(indexClicked);
+    // console.log(gridContent);
 
     let cols = [];
     
@@ -35,35 +35,39 @@ export default function Grid(props){
                 cellsContent.push(null);
             }
             grid.push(cellsContent);
-            console.log(grid);
+            // console.log(grid);
         }
         setGridContent(grid);
     }, [gridSize.rowSize, gridSize.colSize]);
 
-    function handleClick(col, row, gridContent){
-        console.log(gridContent);
+    function handleClick(col, row, gridContent, indexClicked){
         const nextGridContent = [...gridContent];
-        console.log("nextGridContent:");
-        console.log(nextGridContent);
+        const nextIndexClicked = [...indexClicked];
         nextGridContent[row-1][col-1] = 1;
+        nextIndexClicked[0] = col;
+        nextIndexClicked[1] = row;
         setGridContent(nextGridContent);
-        console.log("gridContent:");
-        console.log(gridContent);
+        setIndexClicked(nextIndexClicked);
+        getAdjacent(col, row);
     };
-        console.log(gridContent);
+
+    function getAdjacent(col, row){
+        // console.log("getAdjacent");
+        // console.log(gridContent[col-1][row-1]);
+    }
+        // console.log(gridContent);
 
     return (<div className = "">
-        <GridContext.Provider value={[gridContent, setGridContent]}>
-            {rows.map((row) => (
-                <div className = "margin-col grid-col" key={row}>
-                    {cols.map((col) => (
-                        <div className="margin-cell size-cell fill-yellow d-flex" key={col + row} onClick = {() => handleClick(col, row, gridContent)}>
-                            <Cell rowIndex={row} colIndex={col}/>
-                        </div>
-                    ))}
-                </div>
-            ))}
-        </GridContext.Provider>
+        {rows.map((row) => (
+            <div className = "margin-col grid-col" key={row}>
+                {cols.map((col) => (
+                    <div className="margin-cell size-cell fill-yellow d-flex" key={col + row} onClick = {() => handleClick(col, row, gridContent, indexClicked)}>
+                        <Cell rowIndex={row} colIndex={col}/>
+                    </div>
+                ))}
+            </div>
+        ))}
+        
     </div>
     )
 }
