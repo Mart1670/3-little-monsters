@@ -11,8 +11,8 @@ export default function Grid(props){
 
     const [indexClicked, setIndexClicked] = useContext(IndexContext);
     const [gridContent, setGridContent] = useContext(GridContext);
-    // console.log(indexClicked);
-    // console.log(gridContent);
+    console.log(indexClicked);
+    console.log(gridContent);
 
     let cols = [];
     
@@ -52,8 +52,8 @@ export default function Grid(props){
     };
 
     function getAdjacent(col, row){
-        // console.log("getAdjacent");
-        // console.log(gridContent[col-1][row-1]);
+        console.log("getAdjacent");
+        console.log(gridContent[col-1][row-1]);
     }
         // console.log(gridContent);
 
@@ -61,7 +61,7 @@ export default function Grid(props){
         {rows.map((row) => (
             <div className = "margin-col grid-col" key={row}>
                 {cols.map((col) => (
-                    <div className="margin-cell size-cell fill-yellow d-flex" key={col + row} onClick = {() => handleClick(col, row, gridContent, indexClicked)}>
+                    <div className="margin-cell size-cell fill-yellow d-flex font-white" key={col + row} onClick = {() => handleClick(col, row, gridContent, indexClicked)}>
                         <Cell rowIndex={row} colIndex={col}/>
                     </div>
                 ))}

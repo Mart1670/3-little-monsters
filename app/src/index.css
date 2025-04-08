@@ -4,6 +4,22 @@ body{
     font-style: normal;
 }
 
+.boldonse-regular {
+    font-family: "Boldonse", system-ui;
+    font-weight: 400;
+    font-style: normal;
+}
+
+/* <weight>: Use a value from 300 to 700 */
+/* <uniquifier>: Use a unique and descriptive class name */
+
+.quicksand-400 {
+  font-family: "Quicksand", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+}
+
 .grid-col{
     display: flex;
 }
@@ -27,8 +43,28 @@ body{
     overflow: hidden;
 }
 
+.d-flex-left{
+    display: flex;
+    align-items: start;
+    justify-content: baseline;
+    overflow: hidden;
+}
+
 .fill-yellow{
     background-color: #ffd735;
+    border: none;
+}
+
+.font-yellow{
+    color: #ffd735;
+}
+
+.font-white{
+    color: #ffffff;
+}
+
+.fill-lite-yellow{
+    background-color: #f7e8ae;
     border: none;
 }
 
@@ -43,4 +79,10 @@ body{
 
 .cursor{
     cursor: pointer;
+}
+
+.h-50{
+    height: 50px;
+    width: 75px;
+    text-align: center;
 }
