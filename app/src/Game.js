@@ -14,12 +14,12 @@ export default function Game(){
         <div>
             <GridContext.Provider value={[gridContent, setGridContent]}>
                 <IndexContext.Provider value={[indexClicked, setIndexClicked]}>
-                    <Grid colSize={8} rowSize={8}/>
+                    <Grid colSize={10} rowSize={10}/>
                 </IndexContext.Provider>
             </GridContext.Provider>
 
             <p>You clicked on: <span className="font-yellow">{indexClicked[0]}-{indexClicked[1]}</span></p>
-            <div className="">
+            <div className="d-flex flex-dir-col flex-ai-center">
                 <p>The adjacent <span className="font-yellow">index</span> cells are:</p>
                 <div className="d-flex-left"> 
                     <div>

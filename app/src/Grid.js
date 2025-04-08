@@ -57,17 +57,19 @@ export default function Grid(props){
     }
         // console.log(gridContent);
 
-    return (<div className = "">
-        {rows.map((row) => (
-            <div className = "margin-col grid-col" key={row}>
-                {cols.map((col) => (
-                    <div className="margin-cell size-cell fill-yellow d-flex font-white" key={col + row} onClick = {() => handleClick(col, row, gridContent, indexClicked)}>
-                        <Cell rowIndex={row} colIndex={col}/>
+    return (
+        <div className="d-flex">
+            <div>
+                {rows.map((row) => (
+                    <div className = "margin-col grid-col" key={row}>
+                        {cols.map((col) => (
+                            <div className="margin-cell size-cell fill-yellow d-flex font-white" key={col + row} onClick = {() => handleClick(col, row, gridContent, indexClicked)}>
+                                <Cell rowIndex={row} colIndex={col}/>
+                            </div>
+                        ))}
                     </div>
                 ))}
             </div>
-        ))}
-        
-    </div>
+        </div>
     )
 }
